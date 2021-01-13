@@ -1,0 +1,10 @@
+version: "3"
+services:
+  web:
+    build: .
+    volumes:
+      - ..:/workspaces/remote-container-demo
+    command: /bin/sh -c "while sleep 1000; do :; done"
+  database:
+    image: postgres
+    env_file: database.env

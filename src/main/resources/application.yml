@@ -1,0 +1,12 @@
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: create
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+    datasource:
+        initialization-mode: always
+        url: jdbc:postgresql://database:5432/testdb
+        username: test_user
+        password: s$cret
+
