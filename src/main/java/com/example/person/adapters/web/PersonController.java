@@ -1,7 +1,7 @@
 package com.example.person.adapters.web;
 
-import com.example.person.adapters.db.PersonRepository;
-import com.example.person.core.model.Person;
+import com.example.person.domain.Person;
+import com.example.person.domain.PersonService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonController {
     
     @Autowired
-    private PersonRepository repository;
+    private PersonService personService;
 
-    @GetMapping("/")
-    public Iterable<Person> index() {
-        return repository.findAll();
+    @GetMapping("/people")
+    public Iterable<Person> listPeople() {
+        return personService.listPeople();
     }
 
 }

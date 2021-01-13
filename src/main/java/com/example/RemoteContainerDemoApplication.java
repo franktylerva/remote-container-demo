@@ -1,7 +1,7 @@
 package com.example;
 
 import com.example.person.adapters.db.PersonRepository;
-import com.example.person.core.model.Person;
+import com.example.person.domain.Person;
 
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;

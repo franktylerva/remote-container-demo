@@ -1,4 +1,4 @@
-package com.example.person.core.model;
+package com.example.person.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
