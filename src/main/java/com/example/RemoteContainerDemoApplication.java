@@ -1,7 +1,8 @@
 package com.example;
 
 import com.example.person.adapters.db.PersonEntity;
-import com.example.person.adapters.db.PersonRepository;
+import com.example.person.domain.Person;
+import com.example.person.domain.WriteRepository;
 
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,11 +19,11 @@ public class RemoteContainerDemoApplication {
 	}
 
 	@Bean
-	ApplicationRunner init(PersonRepository repository) {
+	ApplicationRunner init(WriteRepository repository) {
 		return args -> {
-			repository.save( new PersonEntity("Sally Ride") );
-			repository.save( new PersonEntity("Neil Armstrong") );
-			repository.save( new PersonEntity("Alan Shepard") );
+			repository.createPerson( new Person(null, "Sally Ride") );
+			repository.createPerson( new Person(null, "Neil Armstrong") );
+			repository.createPerson( new Person(null, "Alan Shepard") );
 		};
 	}
 
