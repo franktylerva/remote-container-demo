@@ -1,6 +1,5 @@
 package com.example;
 
-import com.example.person.adapters.db.PersonEntity;
 import com.example.person.domain.Person;
 import com.example.person.domain.WriteRepository;
 
