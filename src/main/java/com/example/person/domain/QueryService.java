@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class PersonService {
+public class QueryService {
 
     private PersonRepository repository;
 
