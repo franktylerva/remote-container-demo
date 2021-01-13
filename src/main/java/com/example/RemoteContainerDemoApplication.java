@@ -1,5 +1,8 @@
 package com.example;
 
+import com.example.person.adapters.db.PersonRepository;
+import com.example.person.core.model.Person;
+
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
