@@ -32,9 +32,10 @@ interface PersonRepository extends CrudRepository<PersonRepository.PersonEntity,
     }
 
     @Override
-    default Long createPerson(Person person) {
+    default Person createPerson(Person person) {
         PersonEntity entity = new PersonEntity(person.getName());
-        return save(entity).getId();
+        entity = save(entity);
+        return new Person(entity.getId(), entity.getName());
     }
 
     @Entity

@@ -1,5 +1,5 @@
 package com.example.person.domain;
 
 public interface CommandPort {
-    public Long createPerson( Person person );
+    public Person createPerson( Person person );
 }
