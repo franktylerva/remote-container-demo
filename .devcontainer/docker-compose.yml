@@ -9,5 +9,5 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: test_user
-      POSTGRES_PASSWORD: s$cret
+      POSTGRES_PASSWORD: ${USER}
       POSTGRES_DB: testdb
