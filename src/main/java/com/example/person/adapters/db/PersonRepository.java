@@ -4,6 +4,12 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import com.example.person.domain.Person;
 import com.example.person.domain.ReadRepository;
 import com.example.person.domain.WriteRepository;
@@ -11,8 +17,11 @@ import com.example.person.domain.WriteRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Repository
-interface PersonRepository extends CrudRepository<PersonEntity,Long>, ReadRepository, WriteRepository {
+interface PersonRepository extends CrudRepository<PersonRepository.PersonEntity,Long>, ReadRepository, WriteRepository {
     
     @Override
     default Collection<Person> listPeople() { 
@@ -26,6 +35,23 @@ interface PersonRepository extends CrudRepository<PersonEntity,Long>, ReadReposi
     default Long createPerson(Person person) {
         PersonEntity entity = new PersonEntity(person.getName());
         return save(entity).getId();
+    }
+
+    @Entity
+    @Data
+    @NoArgsConstructor
+    class PersonEntity {
+        
+        public PersonEntity(String name) {
+            this.name = name;
+        }
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        Long id;
+        
+        @Column(name = "USERNAME")
+        String name;
     }
 
 }
