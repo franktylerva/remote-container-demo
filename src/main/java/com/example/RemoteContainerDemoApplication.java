@@ -1,7 +1,7 @@
 package com.example;
 
 import com.example.person.domain.Person;
-import com.example.person.domain.WritePort;
+import com.example.person.domain.CommandPort;
 
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,7 +18,7 @@ public class RemoteContainerDemoApplication {
 	}
 
 	@Bean
-	ApplicationRunner init(WritePort repository) {
+	ApplicationRunner init(CommandPort repository) {
 		return args -> {
 			repository.createPerson( new Person(null, "Sally Ride") );
 			repository.createPerson( new Person(null, "Neil Armstrong") );

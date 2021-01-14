@@ -11,8 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.example.person.domain.Person;
-import com.example.person.domain.ReadPort;
-import com.example.person.domain.WritePort;
+import com.example.person.domain.QueryPort;
+import com.example.person.domain.CommandPort;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -21,7 +21,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Repository
-interface PersonRepository extends CrudRepository<PersonRepository.PersonEntity,Long>, ReadPort, WritePort {
+interface PersonRepository extends CrudRepository<PersonRepository.PersonEntity,Long>, QueryPort, CommandPort {
     
     @Override
     default Collection<Person> listPeople() { 
