@@ -2,6 +2,6 @@ package com.example.person.domain;
 
 import java.util.Collection;
 
-public interface ReadRepository {
+public interface ReadPort {
     Collection<Person> listPeople();
 }

@@ -10,7 +10,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class QueryService {
 
-    private ReadRepository repository;
+    private ReadPort repository;
 
     public Collection<Person> listPeople() {
         return repository.listPeople();
