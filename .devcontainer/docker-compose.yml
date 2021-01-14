@@ -7,4 +7,7 @@ services:
     command: /bin/sh -c "while sleep 1000; do :; done"
   database:
     image: postgres
-    env_file: database.env
+    environment:
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: s$cret
+      POSTGRES_DB: testdb
