@@ -1,2 +1,2 @@
-# remote-container-demo
-A demo of VS Code Remote Containers with a Spring Boot Application.
+# Visual Studio Code Remote Container Demo
+This is a demo Spring Boot application that utilizes VS Code Remote Containers for development.
